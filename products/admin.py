@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from .models import MenuItem
 
 
 # Custom Admins
@@ -9,3 +9,4 @@ class ItemAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Item,ItemAdmin)
+admin.site.register(MenuItem)
