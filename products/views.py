@@ -11,6 +11,27 @@ NOTE: Conside this as a reference and follow this same coding structure or forma
 '''
 
 # Create your views here.
+class HardcodedMenuAPIView(APIView):
+    deg get(self, request):
+    menu = [
+        {
+            "name": "Margherita Pizza",
+            "description": "Classic cheese pizza with tomato sauce",
+            "price": 250
+        },
+        {
+            "name": "Veg Burger",
+            "desciption": "Crispy patty with lettuce and mayo",
+            "price": 120
+        },
+        {
+            "name": "Paste alfredo",
+            "description": "White sauce pasta with vegetables",
+            "price": 200
+        }
+    ]
+    return Response(menu)
+    
 class ItemView(APIView):
 
     def get(self, request):
