@@ -1,4 +1,3 @@
-
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -29,5 +28,14 @@ class HardcodedMenuAPIView(APIView):
         }
     ]
     return Response(data, status=status.HTTP_200_OK)
+
+from .models import Menu
+from .serializers import MenuSerializer
+
+class MenuListAPIView(APIView):
+    def get(self, request):
+        menu_items = Menu.objects.all()
+        serializer = MenuSerializer(menu_items, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
 
