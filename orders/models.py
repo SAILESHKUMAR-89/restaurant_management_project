@@ -5,7 +5,7 @@ from products.models import MenuItem
 ORDER_STATUS_CHOICES = [
     ('PENDING', 'Pending'),
     ('CONFIRMED', 'Confirmed'),
-    ('PREPARING', 'Preaparing'),
+    ('PREPARING', 'Preparing'),
     ('DELIVERED', 'delivered'),
     ('CANCELLED', 'cancelled'),
 ]
