@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf3e0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #d35400;
+            color: white;
+            padding: 1rem;
+            text-align: centers:
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .content {
+            padding: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ resaurant_name }}</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about/">About Us</a>
+        </nav>
+    </header>
+    <div class="content">
+        <h2>Welcome to {{ resaurant_name }}</h2>
+        <p>Enjoy the best dishes in town.</p>
+    </div>
+</body>
+</html>
+
