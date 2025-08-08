@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+RESTAURANT_NAME = "Sailesh's Bistro"
 
 # Application definition
 
