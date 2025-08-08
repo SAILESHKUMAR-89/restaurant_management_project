@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Restaurant Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ restaurant_name }} - Homepage</title>
     <style>
+        /* General styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #faf3e0;
@@ -10,36 +13,53 @@
             padding: 0;
             color: #333;
         }
+        /* Header */
         header {
             background-color: #d35400;
             color: white;
             padding: 1rem;
             text-align: centers:
         }
+        /* Navigation */
         nav a {
-            margin: 0 15px;
+            margin-top: 0.5rem;
             text-decoration: none;
             color: white;
             font-weight: bold;
         }
+        /* Content Area */
         .content {
             padding: 2rem;
             text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #d35400;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>{{ resaurant_name }}</h1>
+        <h1>{{ restaurant_name }}</h1>
         <nav>
             <a href="/">Home</a>
             <a href="/about/">About Us</a>
         </nav>
     </header>
-    <div class="content">
-        <h2>Welcome to {{ resaurant_name }}</h2>
-        <p>Enjoy the best dishes in town.</p>
-    </div>
+
+    <main class="content">
+        <h2>Welcome to {{ restaurant_name }}</h2>
+        <p>Enjoy the best dishes in town, freshly prepared jsut for you.</p>
+    </main>
+
+    <footer>
+        <p>&copy; {{ restaurant_name }} | All rights reserver.</p>
+    </footer>
 </body>
 </html>
 
