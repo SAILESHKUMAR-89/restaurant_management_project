@@ -3,7 +3,8 @@ from django.conf import settings
 
 def homepage(request):
     return render(request, 'home/index.html', {
-        'restaurant_name': settings.RESTAURANT_NAME
+        'restaurant_name': settings.RESTAURANT_NAME,
+        'restaurant_phone': settings.restaurant_phone
     })
 def contact_view(request):
     return render(request, "contact.html", {"restaurant_name": "Sailesh's Bistro"})
