@@ -9,7 +9,7 @@ NOTE: Conside this as a reference and follow this same coding structure or forma
 
 # Create your views here.
 class HardcodedMenuAPIView(APIView):
-    deg get(self, request):
+    def get(self, request):
     data = [
         {
             "name": "Margherita Pizza",
