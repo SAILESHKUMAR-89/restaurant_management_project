@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{ restaurant_name }} - Contact Us </title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #faf3e0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header, footer {
+            background-color: #d35400;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .content {
+            padding:2rem;
+            text-align: center;
+        }
+        .contact-info {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem auto;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ restaurant_name }}</h1>
+    </header>
+
+    <main class="content">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>Address:</strong> 123 Main Street, Bengaluru, India</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Email:</strong> contact@saileshbistro.com</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; {{ restaurant_name }} | All rights reserved.</p>
+    </footer>
+</body>
+</html>
