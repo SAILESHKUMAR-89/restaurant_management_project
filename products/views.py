@@ -10,24 +10,31 @@ NOTE: Conside this as a reference and follow this same coding structure or forma
 # Create your views here.
 class HardcodedMenuAPIView(APIView):
     def get(self, request):
-    data = [
-        {
-            "name": "Margherita Pizza",
-            "description": "Classic cheese pizza with tomato sauce",
-            "price": 250
-        },
-        {
-            "name": "Veg Burger",
-            "desciption": "Crispy patty with lettuce and mayo",
-            "price": 120
-        },
-        {
-            "name": "Paste alfredo",
-            "description": "White sauce pasta with vegetables",
-            "price": 200
-        }
-    ]
-    return Response(data, status=status.HTTP_200_OK)
+        try:
+            data = [
+                {
+                    "name": "Margherita Pizza",
+                    "description": "Classic cheese pizza with tomato sauce",
+                    "price": 250
+                },
+                {
+                    "name": "Veg Burger",
+                    "desciption": "Crispy patty with lettuce and mayo",
+                    "price": 120
+                },
+                {
+                    "name": "Paste alfredo",
+                    "description": "White sauce pasta with vegetables",
+                    "price": 200
+                }
+            ]
+            return Response(data, status=status.HTTP_200_OK)
+        except Exception as e:
+            #catch my unexpected errors
+            return Response(
+                {"error": "Something went wrong while fetching the menu.", "details": str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
     
 
