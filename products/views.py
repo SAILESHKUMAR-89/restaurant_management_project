@@ -19,7 +19,7 @@ class HardcodedMenuAPIView(APIView):
                 },
                 {
                     "name": "Veg Burger",
-                    "desciption": "Crispy patty with lettuce and mayo",
+                    "description": "Crispy patty with lettuce and mayo",
                     "price": 120
                 },
                 {
