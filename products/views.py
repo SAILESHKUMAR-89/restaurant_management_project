@@ -36,5 +36,16 @@ class HardcodedMenuAPIView(APIView):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
-    
+from django.shortcuts import render, redirect
+from .forms import FeedbackForm
+
+def feedback_view(request):
+    if request.method == "POST";
+        from = FeedbackForm(request, POST)
+        if form.is_valid();
+            form.save()
+            return redirect('feedback')
+        else:
+            form = FeedbackForm()
+        return render(request, 'feedback.html', {'form': form})
 
