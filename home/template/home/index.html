@@ -53,7 +53,13 @@
             <a href="/about/">About Us</a>
         </nav>
     </header>
-
+    <!-- Search Bar -->
+    <form method="get" action="">
+        <input type="text" name="q" placeholder="Search menu items..." style="padding: 0.5rem; width: 60%; border: 1px solid #ccc; border-radius: 5px;">
+        <button type="submit" style="padding: 0.5rem 1rem; background-color: #d35400; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Search
+        </button>
+    </form>
     <main class="content">
         <h2>Welcome to {{ restaurant_name }}</h2>
         <p>Enjoy the best dishes in town, freshly prepared just for you.</p>
