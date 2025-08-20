@@ -34,11 +34,17 @@
 </head>
 <body>
     <header>
-        <h1>{{ restaurant_name }}</h1>
+        <h1>{{ restaurant_name }} - Contact Us</h1>
     </header>
 
     <main class="content">
-        <h2>Contact Us</h2>
+        <h2>We'd love to hear from you!</h2>
+        <form id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Your Name">
+            <input type="email" id="email" name="email" placeholder="Your Email">
+            <textarea id="message" name="message" placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
         <div class="contact-info">
             <p><strong>Address:</strong> 123 Main Street, Bengaluru, India</p>
             <p><strong>Phone:</strong> +91 98765 43210</p>
@@ -49,5 +55,18 @@
     <footer>
         <p>&copy; {{ restaurant_name }} {{ current_year }} | All rights reserved.</p>
     </footer>
+    <!-- Client-side validation script -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            
+            if(!name || !email){
+                alert("Please fill in both Name and Email fields before submitting.");
+                event.preventDefault(); //stop form fromsubmitting
+                
+            }
+        });
+    </script>
 </body>
 </html>
