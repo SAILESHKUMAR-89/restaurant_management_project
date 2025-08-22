@@ -65,3 +65,12 @@ def homepage(request):
         "restaurant_name": settings.RESTAURANT_NAME,
     }
     return render(request, "index.html", context)
+
+from .models import RestaurantInfo
+
+def homepage(request):
+    restaurant = RestaurantInfo.objects.first()
+    context = {
+        "restaurant_name" = restaurant.name if restaurant else "Restaurant",
+    }
+    return render(request, "index.html", context)
