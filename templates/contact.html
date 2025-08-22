@@ -1,73 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='UTF-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{ restaurant_name }} - Contact Us </title>
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            background-color: #faf3e0;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header, footer {
-            background-color: #d35400;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        .content {
-            padding:2rem;
-            text-align: center;
-        }
-        .contact-info {
-            background: white;
-            padding: 1.5rem;
-            margin: 1rem auto;
-            max-width: 500px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-    </style>
+    <title>Contact Us</title>
 </head>
 <body>
-    <header>
-        <h1>{{ restaurant_name }} - Contact Us</h1>
-    </header>
-
-    <main class="content">
-        <h2>We'd love to hear from you!</h2>
-        <form id="contactForm">
-            <input type="text" id="name" name="name" placeholder="Your Name">
-            <input type="email" id="email" name="email" placeholder="Your Email">
-            <textarea id="message" name="message" placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <div class="contact-info">
-            <p><strong>Address:</strong> 123 Main Street, Bengaluru, India</p>
-            <p><strong>Phone:</strong> +91 98765 43210</p>
-            <p><strong>Email:</strong> contact@saileshbistro.com</p>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; {{ restaurant_name }} {{ current_year }} | All rights reserved.</p>
-        <p><strong>Opening Hours:</strong> Mon-Fri: 11am-9pm, Sat-Sun: 10am-10pm</p>
-    </footer>
-    <!-- Client-side validation script -->
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            
-            if(!name || !email){
-                alert("Please fill in both Name and Email fields before submitting.");
-                event.preventDefault(); //stop form fromsubmitting
-                
-            }
-        });
-    </script>
+    <h2>Contact Us</h2>
+    <form method = "POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
