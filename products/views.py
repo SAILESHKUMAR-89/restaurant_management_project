@@ -59,3 +59,9 @@ def homepage(request):
         "location":location,
     }
     return render(request, "index.html", context)
+
+def homepage(request):
+    context = {
+        "restaurant_name": settings.RESTAURANT_NAME,
+    }
+    return render(request, "index.html", context)
