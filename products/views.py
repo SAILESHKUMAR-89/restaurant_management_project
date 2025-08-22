@@ -74,3 +74,9 @@ def homepage(request):
         "restaurant_name" = restaurant.name if restaurant else "Restaurant",
     }
     return render(request, "index.html", context)
+
+from .models import MenuItem
+
+def menu_page(request):
+    items = MenuItem.objects.all()
+    return render(request, "menu.html", {"items": items})
