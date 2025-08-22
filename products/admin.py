@@ -17,3 +17,8 @@ class RestaurantLocationAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Item,ItemAdmin,Menu)
 admin.site.register(RestaurantLocation)
+
+ from .models import MenuItem
+ @admin.register(MenuItem)
+ class MenuItemAdmin(admin.ModelAdmin):
+    list_display = ("name", "price")
