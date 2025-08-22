@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Item, Menu
-
+from .models import RestaurantLocation
 
 # Custom Admins
 class ItemAdmin(admin.ModelAdmin):
@@ -9,3 +9,4 @@ class ItemAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Item,ItemAdmin,Menu)
+admin.site.register(RestaurantLocation)
