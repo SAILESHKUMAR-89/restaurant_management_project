@@ -49,3 +49,13 @@ def feedback_view(request):
             form = FeedbackForm()
         return render(request, 'feedback.html', {'form': form})
 
+from .models import RestaurantLocation
+
+def homepage(request):
+    location = RestaurantLocation.objects.first()
+    context = {
+        "restaurant_name": "My Restaurant",
+        "restaurant_phone": "+91-9876543210",
+        "location":location,
+    }
+    return render(request, "index.html", context)
