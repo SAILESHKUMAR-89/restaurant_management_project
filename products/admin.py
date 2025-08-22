@@ -1,7 +1,10 @@
 from django.contrib import admin
 from .models import Item, Menu
-from .models import RestaurantLocation
+from .models import RestaurantLocation, RestaurantInfo
 
+@admin.register(RestaurantInfo)
+class RestaurantInfoAdmin(admin.ModelAdmin):
+    list_display = ('name',)
 # Custom Admins
 class ItemAdmin(admin.ModelAdmin):
     list_display = ['item_name','item_price','created_at']
