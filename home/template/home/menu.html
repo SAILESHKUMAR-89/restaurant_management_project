@@ -1,7 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf3e0;
+            maring: 0;
+            padding: 0;
+        }
+        header{
+            background-color: #d35400;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .menu-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding : 2rem;
+        }
+        .menu-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-raduis:8px;
+            width: 250px;
+            maring: 1rem;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .menu-item img{
+            max-width:100%;
+            height: 150px;
+            objext-fit: cover;
+            border-raduis:8px;
+        }
+        .menu-item h3 {
+            margin: 0.5rem 0;
+            color: #d35400;
+        }
+        .menu-item p{
+            margin: 0.3rem 0;
+        }
+        footer{
+            background-color: #d35400;
+            color: white;
+            text-align: center;
+            padding: 1 rem;
+            maring-top: 2rem;
+        }
+    </style>
 </head>
 <body>
     <h1>Menu</h1>
@@ -12,6 +63,18 @@
             </li>
         {% endfor %}
     </ul>
+    <div class="menu-container">
+        {% for item in items %}
+        <div class="menu-item">
+            {% if item.image %}
+                <img src="{{item.image.url}}" alt="{{ item.name}}">
+            {% endif %}
+            <h3>{{item.name}}</h3>
+            <p>{{item.description}}</p>
+            <p><strong>{{item.price}}</strong></p>
+        </div>
+        {% endfor %}
+    </div>
     <footer>
         <p>&copy; {{ restaurant_name }} {{ current_year }} | All rights reserved.</p>
         <p><strong>Opening Hours:</strong> Mon-Fri: 11am-9pm, Sat-Sun: 10am-10pm</p>
