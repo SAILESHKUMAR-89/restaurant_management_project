@@ -64,6 +64,11 @@
         <h2>Welcome to {{ restaurant_name }}</h2>
         <p>Enjoy the best dishes in town, freshly prepared just for you.</p>
         <p><strong>Call Us:</strong> {{ restaurant_phone}}</p>
+        {% if location %}
+            <p><strong>Address:</strong> {{location.address}}, {{location.city}}, {{location.state}} - {{location.zip_code}}</p>
+        {% else %}
+            <p><em>Address details coming soon...</em></p>
+        {% emdif %}
     </main>
 
     <footer>
