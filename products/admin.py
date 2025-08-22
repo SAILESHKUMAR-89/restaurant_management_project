@@ -8,6 +8,9 @@ class ItemAdmin(admin.ModelAdmin):
 class MenuAdmin(admin.ModelAdmin):
     list_display = ("name", "price")
 
+@admin.register(RestaurantLocation)
+class RestaurantLocationAdmin(admin.ModelAdmin):
+    list_display = {"address", "city", "state", "zip_code"}
 # Register your models here.
 admin.site.register(Item,ItemAdmin,Menu)
 admin.site.register(RestaurantLocation)
