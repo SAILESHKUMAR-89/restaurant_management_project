@@ -50,6 +50,19 @@
             max-width: 500px;
             maring: 2rem auto;
         }
+        .opening-hours{
+            background-color: #fef5e7;
+            padding : 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 1.5rem auto;
+            font-size: 1.1rem;
+        }
+        .opening_hours h3{
+            color: #d35400;
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -87,6 +100,14 @@
         {% emdif %}
     </main>
     {% if location %}
+    <div class="opening-hours" style="margin-top: 2rem; text-align: center;">
+        <h3>Opening Hours</h3>
+        {% if location and location.opening_hours %}
+            <p>{{location.opening_hours}}</p>
+        {% else %}
+            <p>Opening hours not available</p>
+        {% endif %}
+    </div>
         <div class="address">
             <h3>Our location</h3>
             <p>
