@@ -6,4 +6,5 @@ urlpatterns = [
     path('feedback/', feedback_view, name='feedback'),
     path("contact/", contact_view, name="contact"),
     path("menu/", menu_view, name="menu"),
+    path("contact/success/", contact_success, name="contact_success"),
 ]
