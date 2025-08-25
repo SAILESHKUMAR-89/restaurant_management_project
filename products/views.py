@@ -117,3 +117,16 @@ def contact_view(request):
 
 def contact_success(request):
     return render(request, "contact_success.html")
+
+def homepage(request):
+    query = request.GET.get("q")
+    if query:
+        menu_items = MenuItem.objects.filter(name_icontains=query)
+    else:
+        menu_tiems = MenuItem.objects.all()
+    context = {
+        "restaurant_name":"My Restaurant"
+        "restaurant_phone": "+91 9876543210",
+        "menu_items": menu_items,
+    }
+    return render(request, "homepage.html", context)
