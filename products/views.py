@@ -87,3 +87,30 @@ from .models import MenuItem
 def menu_page(request):
     items = MenuItem.objects.all()
     return render(request, "menu.html", {"items": items})
+
+
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+from django.conf import settings
+from .form import ContactForm
+
+def contact_view(request):
+    if request.method == "POST";
+    form = ContactForm(request.POST)
+    if form.is_valid():
+        name = form.cleaned_data['name']
+        email = form.cleaned_data['email']
+        message = form.cleaned_data['message']
+
+        subject = f"New Contact Message from {name}"
+        body = f"Name: {name}\nemail: {email}\n\nMessage:\n{message}"
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [settings.EMAIL_HOST_USER],
+        )
+        return redirect("contact_success")
+    else:
+        form = ContactForm()
