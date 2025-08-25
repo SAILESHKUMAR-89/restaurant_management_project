@@ -29,7 +29,13 @@ ALLOWED_HOSTS = ['*']
 
 RESTAURANT_NAME = "Sailesh's Bistro"
 RESTAURANT_PHONE = "+91 98765 43210"
-
+EMAIL_BACKEND = "django.core.mail.backends.console.Emalbackend
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "your_email@example.com"
+EMAIL_HOST_PASSWORD = "your_email_password"
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Application definition
 
