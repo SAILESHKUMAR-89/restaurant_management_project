@@ -114,3 +114,6 @@ def contact_view(request):
         return redirect("contact_success")
     else:
         form = ContactForm()
+
+def contact_success(request):
+    return render(request, "contact_success.html")
