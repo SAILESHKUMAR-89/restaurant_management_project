@@ -66,6 +66,9 @@
     </style>
 </head>
 <body>
+    {% if restaurant.logo %}
+        <img src="{{restaurant.logo.url}}" alt="{{restaurnat.name}} Logo" style="max-width:200px;"
+    {% endif %}
     <div class="contact-form">
         <h3>Contact Us</h3>
         <form method="post">
