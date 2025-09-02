@@ -128,6 +128,10 @@
         <p><strong>Opening Hours:</strong> Mon-Fri: 11am-9pm, Sat-Sun: 10am-10pm</p>
         <p><strong>Call Us:</strong> {{ restaurant_phone }}</p>
     </footer>
+    <div class = "datetime">
+        <p><strong>Today is:</strong>{% now "1, F j, V" %}</p>
+        <p><strong>current time:</strong>{% now "h:i A" %}</p>
+    </div>
 </body>
 </html>
 
