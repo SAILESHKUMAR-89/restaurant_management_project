@@ -24,6 +24,8 @@ urlpatterns = [
     path('api/products/',include('products.urls')),
     path('api/orders/',include('orders.urls')),
     path("order/", include("orders.urls")),
+    path("account/logout/", auth_views.loginView.as_view(template_name="login.html"), name="login"),
+    path("account/logout/", auth_views.logoutView.as_view(next_page="/"), name="logout"),
 ]
 
 if settings.DEBUG:
