@@ -66,6 +66,10 @@
     </style>
 </head>
 <body>
+    {% extends "base.html" %}
+    {% block breadcrumbs %}
+        Home
+    {% endblock %}
     {% if restaurant.logo %}
         <img src="{{restaurant.logo.url}}" alt="{{restaurnat.name}} Logo" style="max-width:200px;"
     {% endif %}
