@@ -55,6 +55,12 @@
     </style>
 </head>
 <body>
+    <nav class="breadcrumbs" style="margin: 1rem; font-size: 14px;">
+        <a href="/" style="text-decoration:none; color: #d35400;">Home</a>
+        {% if request.path! = "/" %}
+            <span>{{page_title}}</span>
+        {% endif %}
+    </nav>
     <h1>Menu</h1>
     <ul>
         {% for item in items %}
