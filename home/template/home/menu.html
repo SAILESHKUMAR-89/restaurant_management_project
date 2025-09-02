@@ -55,6 +55,17 @@
     </style>
 </head>
 <body>
+    {% extends "base.html %}
+    {% block breadcrumbs %}
+        <a href="/">Home</a> > Menu
+    {% endblock %}
+
+    {% block content %}
+        <h2>Our Menu</h2>
+        {% for item in menu_item %}
+            <p>{{ item.name }} - {{ item.price }}</p>
+        {% endfor %}
+    {% endblock %}
     <nav class="breadcrumbs" style="margin: 1rem; font-size: 14px;">
         <a href="/" style="text-decoration:none; color: #d35400;">Home</a>
         {% if request.path! = "/" %}
@@ -85,5 +96,6 @@
         <p>&copy; {{ restaurant_name }} {{ current_year }} | All rights reserved.</p>
         <p><strong>Opening Hours:</strong> Mon-Fri: 11am-9pm, Sat-Sun: 10am-10pm</p>
     </footer>
+
 </body>
 </html>
