@@ -26,3 +26,8 @@ def contact_view(request):
     else:
         form = ContactForm()
     return render(request, "contact.html", {"restaurant_name": "Sailesh's Bistro"})
+
+def homepage(request):
+    return render(request, "homepage.html", {
+        "restaurant_phone": settings.RESTAURANT_PHONE
+    })
