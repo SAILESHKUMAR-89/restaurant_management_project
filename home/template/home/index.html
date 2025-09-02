@@ -136,6 +136,17 @@
         <p><strong>Today is:</strong>{% now "1, F j, V" %}</p>
         <p><strong>current time:</strong>{% now "h:i A" %}</p>
     </div>
+    {% if user.is_authenticated %}
+        <p>you are logged in as <strong>{{user.username}}</strong>.
+            <a href="{% url 'logout' %}">Logout</a>
+        </p>
+    {% else %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
 </body>
 </html>
 
