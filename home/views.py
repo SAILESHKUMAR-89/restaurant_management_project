@@ -31,3 +31,6 @@ def homepage(request):
     return render(request, "homepage.html", {
         "restaurant_phone": settings.RESTAURANT_PHONE
     })
+
+def privacy_view(request):
+    return render(request, "privacy.html")
