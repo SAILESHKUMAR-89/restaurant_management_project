@@ -130,3 +130,8 @@ def homepage(request):
         "menu_items": menu_items,
     }
     return render(request, "homepage.html", context)
+
+from django.shortcuts import render
+
+def order_page(request):
+    return render(request, "order.html")
