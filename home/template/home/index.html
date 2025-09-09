@@ -63,6 +63,13 @@
             color: #d35400;
             margin-bottom: 0.5rem;
         }
+        body{
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -149,6 +156,10 @@
         </form>
     <div class="order-btn">
         <a href="{% url 'order_page' %}">Order Now</a>
+    </div>
+    <div class="food-gallery">
+        <img src="{% static 'images/pizza.jpg' %}" alt="Pizza">
+        <img src="{% static 'images/burger.jpg' %}" alt= "Burger">
     </div>
 </body>
 </html>
